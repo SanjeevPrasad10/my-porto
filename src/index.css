@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+@theme inline {
+  --animate-meteor-effect: meteor 2s linear infinite;
+  
+  @keyframes meteor {
+    0% {
+      transform: rotate(215deg) translateX(0);
+      opacity: 1;
+    }
+    70% {
+      opacity: 1;
+    }
+    100% {
+      transform: rotate(215deg) translateX(-500px);
+      opacity: 0;
+    }
+  }
+}
+
+@theme {
+  --color-regal-blue: #243c5a; 
+  --color-light-green: #052e1e80;
+  --color-light-white:#a7a6a6
+  --color-green:# #79d279
+
+}
+
+/* *{
+  height: 0%;
+  width: 0%;
+  overflow: hidden;
+} */
