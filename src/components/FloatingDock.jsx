@@ -6,14 +6,25 @@ import { LuMoon, LuSun } from "react-icons/lu";
 import { SiLeetcode } from "react-icons/si";
 
 const FloatingDock = () => {
-  const [isDarkMode, setIsDarkMode] = useState(true);
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    if (typeof window === "undefined") return true;
 
-  // Add/remove "dark" class from <html>
+    const stored = localStorage.getItem("theme");
+
+    if (stored) {
+      return stored === "dark";
+    }
+
+    return window.matchMedia("(prefers-color-scheme: dark)").matches;
+  });
+
   useEffect(() => {
     if (isDarkMode) {
       document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
     } else {
       document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
     }
   }, [isDarkMode]);
 
@@ -43,34 +54,19 @@ const FloatingDock = () => {
         <a
           href="/"
           aria-label="Home"
-          className="
-            hover:text-black
-            dark:hover:text-white
-            transition-colors
-          "
+          className="hover:text-black dark:hover:text-white transition-colors"
         >
           <GoHome className="w-4 h-4" />
         </a>
 
         {/* Divider */}
-        <div
-          className="
-            w-[1px] h-4
-            bg-zinc-300
-            dark:bg-zinc-600
-            mx-1
-          "
-        />
+        <div className="w-[1px] h-4 bg-zinc-300 dark:bg-zinc-600 mx-1" />
 
-        {/* Edit / Blog */}
+        {/* Blog */}
         <a
           href="/blog"
           aria-label="Blog"
-          className="
-            hover:text-black
-            dark:hover:text-white
-            transition-colors
-          "
+          className="hover:text-black dark:hover:text-white transition-colors"
         >
           <FiEdit3 className="w-4 h-4" />
         </a>
@@ -81,11 +77,7 @@ const FloatingDock = () => {
           target="_blank"
           rel="noreferrer"
           aria-label="GitHub Profile"
-          className="
-            hover:text-black
-            dark:hover:text-white
-            transition-colors
-          "
+          className="hover:text-black dark:hover:text-white transition-colors"
         >
           <FaGithub className="w-4 h-4" />
         </a>
@@ -96,11 +88,7 @@ const FloatingDock = () => {
           target="_blank"
           rel="noreferrer"
           aria-label="LinkedIn Profile"
-          className="
-            hover:text-black
-            dark:hover:text-white
-            transition-colors
-          "
+          className="hover:text-black dark:hover:text-white transition-colors"
         >
           <FaLinkedin className="w-4 h-4" />
         </a>
@@ -111,11 +99,7 @@ const FloatingDock = () => {
           target="_blank"
           rel="noreferrer"
           aria-label="LeetCode Profile"
-          className="
-            hover:text-black
-            dark:hover:text-white
-            transition-colors
-          "
+          className="hover:text-black dark:hover:text-white transition-colors"
         >
           <SiLeetcode className="w-4 h-4" />
         </a>
@@ -135,8 +119,7 @@ const FloatingDock = () => {
           shadow-lg
           text-zinc-700 dark:text-zinc-400
           hover:text-black dark:hover:text-white
-          transition-all
-          duration-200
+          transition-all duration-200
           cursor-pointer
         "
       >
