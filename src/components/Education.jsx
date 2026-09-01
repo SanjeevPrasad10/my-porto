@@ -55,27 +55,27 @@ const Education = () => {
           </span>
 
           <span className="skill-pill">
-            Javascript
+            | Javascript
           </span>
 
           <span className="skill-pill">
-            Node.js
+            | Node.js
           </span>
 
           <span className="skill-pill">
-            Express.js
+            | Express.js
           </span>
 
           <span className="skill-pill">
-            MongoDB
+            | MongoDB
           </span>
 
           <span className="skill-pill">
-            JAVA + DSA
+            | JAVA + DSA
           </span>
 
           <span className="skill-pill">
-            React Flow
+            | React Flow
           </span>
 
         </div>

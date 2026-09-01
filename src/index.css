@@ -2,18 +2,21 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme inline {
-  --animate-meteor-effect: meteor 2s linear infinite;
+  --animate-meteor-effect: meteor 3s linear infinite;
   
   @keyframes meteor {
     0% {
       transform: rotate(215deg) translateX(0);
+      opacity: 0;
+    }
+    15% {
       opacity: 1;
     }
-    70% {
-      opacity: 1;
+    80% {
+      opacity: 0.8;
     }
     100% {
-      transform: rotate(215deg) translateX(-500px);
+      transform: rotate(215deg) translateX(-650px);
       opacity: 0;
     }
   }
