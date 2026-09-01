@@ -1,6 +1,5 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Pacifico&display=swap');
 
 @theme inline {
   --animate-meteor-effect: meteor 2s linear infinite;
@@ -23,14 +22,7 @@
 @theme {
   --color-regal-blue: #243c5a; 
   --color-light-green: #052e1e80;
-  --color-light-white:#a7a6a6
-  --color-green:# #79d279
+  --color-light-white: #a7a6a6;
+  --color-green: #79d279;
   --font-pacifico: 'Pacifico', cursive;
-
 }
-
-/* *{
-  height: 0%;
-  width: 0%;
-  overflow: hidden;
-} */

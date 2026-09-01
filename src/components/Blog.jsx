@@ -3,7 +3,7 @@ import { memo } from 'react';
 import { BiArrowFromLeft } from 'react-icons/bi';
 const Blog = () => {
   return (
-    <div>
+    <div id="blog">
         <div>
             <p className='text-center font-bold text-2xl'>My Writings</p>
             <p className='text-center font-bold'>Thoughts on software that i have my own uderstanding of</p>

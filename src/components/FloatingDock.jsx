@@ -64,7 +64,7 @@ const FloatingDock = () => {
 
         {/* Blog */}
         <a
-          href="/blog"
+          href="#blog"
           aria-label="Blog"
           className="hover:text-black dark:hover:text-white transition-colors"
         >
